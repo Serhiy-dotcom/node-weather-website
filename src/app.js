@@ -8,6 +8,7 @@ const geocode = require('./utils/geocode.js');
 const forecast = require('./utils/forecast.js');
 
 const app = express();//express is a function which return object and by this we can manipulate our document
+const port = process.env.PORT || 3000;
 
 //Define paths for Express config
 const publickDirectory = path.join(__dirname, '../public/');//by this line we edit __dirname path by going out of src folder and go up to the public    PS: to undrestand what we do just console.log(__dirname);
@@ -110,8 +111,8 @@ app.get('*', (req,res) => {
 
 
 //start server app
-app.listen(3000, () => {
-	console.log('Server is up on port 3000.');//this will not display to user, its just usefull peace of information
+app.listen(port, () => {
+	console.log('Server is up on port ' + port + '.');//this will not display to user, its just usefull peace of information
 });
 
 
